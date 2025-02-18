@@ -1,0 +1,458 @@
+{
+  "info": {
+    "name": "Studiis API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "User",
+      "item": [
+        {
+          "name": "Create User",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"username\":\"johndoe\",\"firstName\":\"John\",\"surname\":\"Doe\",\"email\":\"johndoe@example.com\",\"password\":\"password123\"}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/users",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "users"]
+            }
+          }
+        },
+        {
+          "name": "Get All Users",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:3000/api/users",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "users"]
+            }
+          }
+        },
+        {
+          "name": "Get User by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:3000/api/users/:user_id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "users", ":user_id"]
+            }
+          }
+        },
+        {
+          "name": "Update User",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"firstName\":\"Jane\"}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/users/:user_id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "users", ":user_id"]
+            }
+          }
+        },
+        {
+          "name": "Delete User",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:3000/api/users/:user_id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "users", ":user_id"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Answer",
+      "item": [
+        {
+          "name": "Create Answer",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"statement\":\"Is the sky blue?\",\"correctAnswer\":true}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/answers",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "answers"]
+            }
+          }
+        },
+        {
+          "name": "Get All Answers",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:3000/api/answers",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "answers"]
+            }
+          }
+        },
+        {
+          "name": "Get Answer by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:3000/api/answers/:answer_id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "answers", ":answer_id"]
+            }
+          }
+        },
+        {
+          "name": "Update Answer",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"correctAnswer\":false}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/answers/:answer_id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "answers", ":answer_id"]
+            }
+          }
+        },
+        {
+          "name": "Delete Answer",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:3000/api/answers/:answer_id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "answers", ":answer_id"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Question",
+      "item": [
+        {
+          "name": "Create Question",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"statement\":\"What is 2+2?\",\"answers\":[{\"statement\":\"4\",\"correctAnswer\":true},{\"statement\":\"3\",\"correctAnswer\":false}],\"subjects\":[\"Math\"]}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/questions",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "questions"]
+            }
+          }
+        },
+        {
+          "name": "Get All Questions",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:3000/api/questions",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "questions"]
+            }
+          }
+        },
+        {
+          "name": "Get Question by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:3000/api/questions/:question_id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "questions", ":question_id"]
+            }
+          }
+        },
+        {
+          "name": "Update Question",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"statement\":\"What is 3+3?\"}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/questions/:question_id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "questions", ":question_id"]
+            }
+          }
+        },
+        {
+          "name": "Delete Question",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:3000/api/questions/:question_id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "questions", ":question_id"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Quizz",
+      "item": [
+        {
+          "name": "Create Quizz",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"questionsCount\":1,\"questions\":[{\"statement\":\"What is 2+2?\",\"answers\":[{\"statement\":\"4\",\"correctAnswer\":true},{\"statement\":\"3\",\"correctAnswer\":false}],\"subjects\":[\"Math\"]}],\"subjects\":[\"Math\"]}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/quizzes",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "quizzes"]
+            }
+          }
+        },
+        {
+          "name": "Get All Quizzes",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:3000/api/quizzes",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "quizzes"]
+            }
+          }
+        },
+        {
+          "name": "Get Quizz by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:3000/api/quizzes/:quizz_id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "quizzes", ":quizz_id"]
+            }
+          }
+        },
+        {
+          "name": "Update Quizz",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"questionsCount\":2}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/quizzes/:quizz_id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "quizzes", ":quizz_id"]
+            }
+          }
+        },
+        {
+          "name": "Delete Quizz",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:3000/api/quizzes/:quizz_id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "quizzes", ":quizz_id"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Flashcard",
+      "item": [
+        {
+          "name": "Create Flashcard",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"title\":\"History of Rome\",\"croppedContent\":\"Ancient Rome was a civilization...\",\"content\":\"Ancient Rome was a civilization that began on the Italian Peninsula as early as the 8th century BC.\"}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/flashcards",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "flashcards"]
+            }
+          }
+        },
+        {
+          "name": "Get All Flashcards",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:3000/api/flashcards",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "flashcards"]
+            }
+          }
+        },
+        {
+          "name": "Get Flashcard by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:3000/api/flashcards/:flashcard_id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "flashcards", ":flashcard_id"]
+            }
+          }
+        },
+        {
+          "name": "Update Flashcard",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"title\":\"History of Ancient Rome\"}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/flashcards/:flashcard_id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "flashcards", ":flashcard_id"]
+            }
+          }
+        },
+        {
+          "name": "Delete Flashcard",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:3000/api/flashcards/:flashcard_id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "flashcards", ":flashcard_id"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
