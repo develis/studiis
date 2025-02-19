@@ -5,10 +5,10 @@
   },
   "item": [
     {
-      "name": "User",
+      "name": "Auth",
       "item": [
         {
-          "name": "Create User",
+          "name": "Register",
           "request": {
             "method": "POST",
             "header": [
@@ -22,14 +22,42 @@
               "raw": "{\"username\":\"johndoe\",\"firstName\":\"John\",\"surname\":\"Doe\",\"email\":\"johndoe@example.com\",\"password\":\"password123\"}"
             },
             "url": {
-              "raw": "http://localhost:3000/api/users",
+              "raw": "http://localhost:3000/api/auth/register",
               "protocol": "http",
               "host": ["localhost"],
               "port": "3000",
-              "path": ["api", "users"]
+              "path": ["api", "auth", "register"]
             }
           }
         },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"email\":\"johndoe@example.com\",\"password\":\"password123\"}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/auth/login",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "auth", "login"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "User",
+      "item": [
         {
           "name": "Get All Users",
           "request": {
@@ -199,7 +227,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\"statement\":\"What is 2+2?\",\"answers\":[{\"statement\":\"4\",\"correctAnswer\":true},{\"statement\":\"3\",\"correctAnswer\":false}],\"subjects\":[\"Math\"]}"
+              "raw": "{\"statement\":\"What is 2+2?\",\"answers\":[\"4\",\"3\"],\"indexOfRightAnswer\":0}"
             },
             "url": {
               "raw": "http://localhost:3000/api/questions",
@@ -248,7 +276,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\"statement\":\"What is 3+3?\"}"
+              "raw": "{\"statement\":\"What is 3+3?\",\"answers\":[\"6\",\"5\"],\"indexOfRightAnswer\":0}"
             },
             "url": {
               "raw": "http://localhost:3000/api/questions/:question_id",
@@ -289,7 +317,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\"questionsCount\":1,\"questions\":[{\"statement\":\"What is 2+2?\",\"answers\":[{\"statement\":\"4\",\"correctAnswer\":true},{\"statement\":\"3\",\"correctAnswer\":false}],\"subjects\":[\"Math\"]}],\"subjects\":[\"Math\"]}"
+              "raw": "{\"title\":\"Math Quiz\",\"questions\":[{\"statement\":\"What is 2+2?\",\"answers\":[\"4\",\"3\"],\"indexOfRightAnswer\":0}],\"subjects\":[\"Math\"]}"
             },
             "url": {
               "raw": "http://localhost:3000/api/quizzes",
@@ -338,7 +366,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\"questionsCount\":2}"
+              "raw": "{\"title\":\"Advanced Math Quiz\"}"
             },
             "url": {
               "raw": "http://localhost:3000/api/quizzes/:quizz_id",

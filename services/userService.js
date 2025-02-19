@@ -1,17 +1,14 @@
 const User = require('../models/User');
 
 class UserService {
-  async createUser(data) {
-    const user = new User(data);
-    return await user.save();
-  }
-
   async getUserById(id) {
-    return await User.findById(id);
+    const user = await User.findById(id);
+    return this._omitPassword(user);
   }
 
   async updateUser(id, data) {
-    return await User.findByIdAndUpdate(id, data, { new: true });
+    const user = await User.findByIdAndUpdate(id, data, { new: true });
+    return this._omitPassword(user);
   }
 
   async deleteUser(id) {
@@ -19,7 +16,14 @@ class UserService {
   }
 
   async getAllUsers() {
-    return await User.find();
+    const users = await User.find();
+    return users.map(user => this._omitPassword(user));
+  }
+
+  _omitPassword(user) {
+    if (!user) return null;
+    const { password, ...userWithoutPassword } = user.toObject();
+    return userWithoutPassword;
   }
 }
 

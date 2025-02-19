@@ -1,7 +1,10 @@
 const express = require('express');
 const questionController = require('../controllers/questionController');
+const authMiddleware = require('../middlewares/authMiddleware');
 
 const router = express.Router();
+
+router.use(authMiddleware);
 
 router.post('/', questionController.createQuestion);
 router.get('/', questionController.getAllQuestions);
